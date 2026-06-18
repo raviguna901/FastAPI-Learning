@@ -45,3 +45,22 @@ def get_courses():
     else:
         return "No courses found"
 
+@app.get("/names")
+def get_names():
+    names=set()
+    for student in students_data:
+        names.add(student['name'])
+    if names:
+        return names
+    else:
+        return "No names found"
+    
+@app.get("/places")
+def get_places():
+    places=set()
+    for student in students_data:
+        places.add(student['place'])
+    if places:
+        return places
+    else:
+        return "No places found"
